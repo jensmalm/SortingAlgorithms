@@ -1,0 +1,467 @@
+/* JMArrayList.java */
+
+ //package datastructures;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+public class JMArrayList<T> implements Iterable<T>
+{
+    private Object[] array;
+    private static int DEFAULT_CAPACITY=10;
+    private static int INCREMENT_SIZE=10;
+    private int size;
+    /**
+     * @return JMArrayList(int) creates a JMArrayList of capacity _initialCapacity_.
+     * (Note: over the course of this documentation, the term "size" will refer to the number of items stored
+     * in the JMArrayList, while the term "capacity" will refer to the length of the array being used to store them.
+     * At all times, the capacity will be greater than or equal to the size.)
+     * 
+     * 
+     * @param initialCapacity: the capacity with which the JMArrayList begins its life.
+     * 
+     */
+    public JMArrayList(int initialCapacity)
+    {
+        array=new Object[initialCapacity];
+        size=0;
+    }
+    /**
+     * @return JMArrayList() creates a JMArrayList with the default capacity
+     */
+    public JMArrayList()
+    {
+        this(DEFAULT_CAPACITY);
+    }
+    private JMArrayList(Object[] list)
+    {
+        array=list;
+    }
+    /**
+     * @return add(T) returns true (to indicate that the addition of the item was successful.)
+     * 
+     * @param item: an Object of type T to add to the end of the list
+     */
+    public boolean add(T item)
+    {
+        if (size==array.length)
+        {
+            Object[] newArray=new Object[array.length+INCREMENT_SIZE];
+            for (int i=0; i<size; i++)
+            {
+                newArray[i]=array[i];
+            }
+            newArray[size]=item;
+            array=newArray;
+        }
+        else
+        {
+            array[size]=item;
+        }
+        size++;
+        return true;
+    }
+    /**
+     * @param index: the index at which to insert the item
+     * @param item: an item to add to the list
+     * 
+     * Adds an item in the desired location.
+     */
+    public void add(int index, T item)
+    {
+        if (size==array.length)
+        {
+            Object[] newArray=new Object[array.length+INCREMENT_SIZE];
+            for (int i=0; i<index; i++)
+            {
+                newArray[i]=array[i];
+            }
+            newArray[index]=item;
+            for (int i=index; i<size; i++)
+            {
+                newArray[i+1]=array[i];
+            }
+            array=newArray;
+        }
+        else
+        {
+            for (int i=size; i>index; i--)
+            {
+                array[i]=array[i-1];
+            }
+            array[index]=item;
+        }
+        size++;
+    }
+    /**
+     * Makes it so that the list no longer stores any items. Returns to a capacity of DEFAULT_CAPACITY and a size of 0.
+     */
+    public void clear()
+    {
+        array=new Object[DEFAULT_CAPACITY];
+        size=0;
+    }
+    /**
+     * @return clone() returns a new Object (of dynamic type JMArrayList) that stores the same items as this list in
+     * the same order
+     */
+    public Object clone()
+    {
+        JMArrayList<T> copy=new JMArrayList<T>();
+        for (int i=0; i<size; i++)
+        {
+            copy.add((T)array[i]);
+        }
+        return copy;
+    }
+    /**
+     * @return contains(T) returns true if the item (or an item that is equals() to it) is stored at any index in this
+     * list.
+     * 
+     * @param item: the item that, if in the list, makes this method return true.
+     */
+    public boolean contains(T item)
+    {
+        if (item==null)
+        {
+            for (int i=0; i<size; i++)
+            {
+                if (array[i]==null)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        else
+        {
+            for (int i=0; i<size; i++)
+            {
+                if (item.equals(array[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    /**
+     * @param minCapacity: the size that the capacity must be made less than.
+     * 
+     * If necessary, items at the end of the list will be removed if they can not be fitted into a JMArrayList of
+     * capacity _minCapacity_.
+     */
+    public void ensureCapacity(int minCapacity)
+    {
+        if (array.length<minCapacity)
+        {
+            Object[] newArray=new Object[minCapacity];
+            for (int i=0; i<size; i++)
+            {
+                newArray[i]=array[i];
+            }
+            array=newArray;
+        }
+    }
+    /**
+     * @return get(int) returns the item stored in the desired index
+     * 
+     * @param index: the index to return the value of
+     */
+    public T get(int index)
+    {
+        if ((index<0) || (index>=size))
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        return (T)(array[index]);
+    }
+    /**
+     * @return indexOf(Object) returns the first index at which the item is stored (if it is present), or -1 if the item
+     * is not present.
+     * 
+     * @param item: the item to return the index of
+     */
+    public int indexOf(Object item)
+    {
+        if (item==null)
+        {
+            for (int i=0; i<size; i++)
+            {
+                if (array[i]==null)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        else
+        {
+            for (int i=0; i<size; i++)
+            {
+                if (item.equals(array[i]))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+    }
+    /**
+     * @return isEmpty() returns true if there are no items stored in the JMArrayList
+     */
+    public boolean isEmpty()
+    {
+        return size==0;
+    }
+    /**
+     * @return lastIndexOf(Object) returns the last index at which the item is stored (if it is present), or -1 if the item
+     * is not present.
+     * 
+     * @param item: the item to return the last index of
+     */
+    public int lastIndexOf(Object item)
+    {
+        if (item==null)
+        {
+            for (int i=size-1; i>=0; i--)
+            {
+                if (array[i]==null)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        else
+        {
+            for (int i=size-1; i>=0; i--)
+            {
+                if (item.equals(array[i]))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+    }
+    /**
+     * @return remove(int) returns the item formerly stored in an index, after removing it from the list.
+     * 
+     * @param index: the index to remove the value from
+     * 
+     * An IndexOutOfBoundsException is thrown if the index is out of bounds.
+     */
+    public T remove(int index)
+    {
+        if ((index<0) || (index>=size))
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        T returnme=(T)(array[index]);
+        for (int i=index; i<size-1; i++)
+        {
+            array[i]=array[i+1];
+        }
+        size--;
+        return returnme;
+    }
+    /**
+     * @return remove(Object) return true if the item was found and removed from the list
+     * 
+     * Removes an item from the list
+     * 
+     * @param item: the item to be removed
+     */
+    public boolean remove(Object item)
+    {
+        if (item==null)
+        {
+            for (int i=0; i<size; i++)
+            {
+                if (array[i]==null)
+                {
+                    remove(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+        else
+        {
+            for (int i=0; i<size; i++)
+            {
+                if (item.equals(array[i]))
+                {
+                    remove(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    /**
+     * Removes an entire range from fromIndex (inclusive) to toIndex (exclusive) from the list
+     * 
+     * @param fromIndex: the first index to remove from
+     * @param toIndex: the first index after those that are to be removed
+     */
+    protected void removeRange(int fromIndex, int toIndex)
+    {
+        if ((toIndex<fromIndex) || (fromIndex<0) || (toIndex>size))
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        int shift=toIndex-fromIndex;
+        for (int i=fromIndex; i<size-shift; i++)
+        {
+            array[i]=array[i+shift];
+        }
+        size-=shift;
+    }
+    /**
+     * Sets the desired index to a new item.
+     * @return set(int, T) returns the T that it replaces with _item_.
+     * 
+     * @param index: the index at which to the replace an element.
+     * @param item: the item to replace it with
+     * 
+     */
+    public T set(int index, T item)
+    {
+        if ((index<0) || (index>=size))
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        T t=(T)(array[index]);
+        array[index]=item;
+        return t;
+    }
+    /**
+     * @return size() returns the size of the list
+     */
+    public int size()
+    {
+        return size;
+    }
+    /**
+     * @return toArray() returns an array of Objects with the same items as this list, in the same order.
+     */
+    public Object[] toArray()
+    {        
+        Object[] newArray=new Object[size];
+        for (int i=0; i<size; i++)
+        {
+            newArray[i]=array[i];
+        }
+        return newArray;
+    }
+    /**
+     * @return returns the desired sublist, in the form of another JMArrayList
+     */
+    public JMArrayList<T> subList(int fromIndex, int toIndex)
+    {
+        if ((toIndex<fromIndex) || (fromIndex<0) || (toIndex>size))
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        Object[] list=new Object[toIndex-fromIndex];
+        for (int i=0; i<list.length; i++)
+        {
+            list[i]=array[i+fromIndex];
+        }
+        return new JMArrayList<T>(list);
+    }
+    /**
+     * An iterator, so that JMArrayList lists may be iterated over.
+     */
+    private class ArrayListIterator implements Iterator<T>
+    {
+        private int index; //where we are in the list
+        /**
+         * @return ArrayListIterator() creates a new iterator with which to iterate over this list, starting at the
+         * beginning.
+         */
+        public ArrayListIterator()
+        {
+            index=0;
+        }
+        /**
+         * @return hasNext() returns true if the list still contains items to iterate over, false if the iteration is
+         * complete.
+         */
+        public boolean hasNext()
+        {
+            return index<size;
+        }
+        /**
+         * @return next() returns the next item in the list
+         * 
+         * Returns the next item in the list and updates index so that next time next() is called, it will proceed through
+         * the list.
+         */
+        public T next()
+        {
+            if (!hasNext())
+            {
+                throw new NoSuchElementException();
+            }
+            index++;
+            return (T)array[index-1];
+        }
+        /**
+         * Throws an exception; the remove method is not supported by this Iterator.
+         */
+        public void remove()
+        {
+            throw new UnsupportedOperationException();
+        }
+    }
+    /**
+     * @return iterator() returns an iterator with which to iterate through this list.
+     */
+    public Iterator<T> iterator()
+    {
+        return new ArrayListIterator();
+    }
+    /**
+     * @return hashCode() returns a hash code for this JMArrayList
+     * 
+     * (Over-rides Object's hashCode() method).
+     */
+    public int hashCode()
+    {
+        int hashCode=1;
+        Iterator<T> itr=iterator();
+        while (itr.hasNext())
+        {
+            T obj=itr.next();
+            hashCode*=31;
+            if (obj!=null)
+            {
+                hashCode+=obj.hashCode();
+            }
+        }
+        return hashCode;
+    }
+    /**
+     * @return a String containing the toString() representations off all items stored in the list, separated by commas,
+     * with brackets enclosing the list.
+     */
+    public String toString()
+    {
+        if (size==0)
+        {
+            return "[]";
+        }
+        if (size==1)
+        {
+            return "["+array[0].toString()+"]";
+        }
+        String st="["+array[0].toString();
+        for (int i=1; i<size; i++)
+        {
+            st=st+", "+array[i].toString();
+        }
+        return st+"]";
+    }
+}

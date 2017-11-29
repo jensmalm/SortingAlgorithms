@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=name
+comment0.target=TournamentNode(java.lang.String)
+comment1.params=inputLeft\ inputRight
+comment1.target=TournamentNode(TournamentNode,\ TournamentNode)
+comment2.params=
+comment2.target=java.lang.String\ getTeam()
+comment3.params=
+comment3.target=boolean\ complete()
+comment4.params=
+comment4.target=boolean\ ready()
+comment5.params=
+comment5.target=void\ evaluate()
+comment6.params=st
+comment6.target=void\ setStatus(java.lang.String)
+comment7.params=
+comment7.target=TournamentNode\ getLeft()
+comment8.params=
+comment8.target=TournamentNode\ getRight()
+numComments=9

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=p\ k
+comment0.target=Tree234Node(Tree234Node,\ int)
+comment1.params=p\ c1\ k1\ c2
+comment1.target=Tree234Node(Tree234Node,\ Tree234Node,\ int,\ Tree234Node)
+comment2.params=p\ c1\ k1\ c2\ k2\ c3
+comment2.target=Tree234Node(Tree234Node,\ Tree234Node,\ int,\ Tree234Node,\ int,\ Tree234Node)
+comment3.params=p\ c1\ k1\ c2\ k2\ c3\ k3\ c4
+comment3.target=Tree234Node(Tree234Node,\ Tree234Node,\ int,\ Tree234Node,\ int,\ Tree234Node,\ int,\ Tree234Node)
+numComments=4

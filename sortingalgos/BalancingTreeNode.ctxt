@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=v\ c\ l\ r
+comment0.target=BalancingTreeNode(int,\ int,\ BalancingTreeNode,\ BalancingTreeNode)
+comment1.params=node
+comment1.target=int\ size(BalancingTreeNode)
+comment10.params=
+comment10.target=int\ size()
+comment2.params=v
+comment2.target=void\ setValue(int)
+comment3.params=c
+comment3.target=void\ setCount(int)
+comment4.params=l
+comment4.target=void\ setLeft(BalancingTreeNode)
+comment5.params=r
+comment5.target=void\ setRight(BalancingTreeNode)
+comment6.params=
+comment6.target=int\ getValue()
+comment7.params=
+comment7.target=int\ getCount()
+comment8.params=
+comment8.target=BalancingTreeNode\ getLeft()
+comment9.params=
+comment9.target=BalancingTreeNode\ getRight()
+numComments=11

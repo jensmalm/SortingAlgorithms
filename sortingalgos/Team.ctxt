@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=n\ st1\ st2\ st3\ st4
+comment0.target=Team(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.params=n
+comment1.target=java.lang.String\ get(int)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=other
+comment3.target=boolean\ playAgains(Team)
+numComments=4

@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=val
+comment0.target=JensTreeNode(int)
+comment1.params=
+comment1.target=void\ add()
+comment2.params=n
+comment2.target=JensTreeNode\ child(int)
+comment3.params=
+comment3.target=int\ count()
+comment3.text=\n\ \ \ \ public\ JensTreeNode\ childOrNull(int\ n)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ return\ children.get(n);\n\ \ \ \ }\n
+comment4.params=
+comment4.target=int\ maxChild()
+comment5.params=
+comment5.target=java.util.TreeMap\ children()
+comment6.params=
+comment6.target=int\ value()
+comment7.params=
+comment7.target=int\ hashCode()
+comment8.params=
+comment8.target=JensTreeNode\ nextChild()
+comment9.params=
+comment9.target=boolean\ childrenRemaining()
+numComments=10

@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.util.ArrayList\ getTeams()
+comment1.params=t
+comment1.target=void\ sleep(int)
+comment2.params=st
+comment2.target=Team\ team(java.lang.String)
+comment3.params=t1\ t2
+comment3.target=Team\ getWinner(Team,\ Team)
+comment4.params=
+comment4.target=void\ printALot()
+comment5.params=st1\ st2
+comment5.target=Team\ play(java.lang.String,\ java.lang.String)
+comment6.params=st1\ st2\ upto
+comment6.target=Team\ getSeriesWinner(java.lang.String,\ java.lang.String,\ int)
+comment7.params=
+comment7.target=void\ tournament()
+numComments=8

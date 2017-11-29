@@ -1,0 +1,52 @@
+Class documentation
+<---- javadoc command: ---->
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.6
+-classpath
+/Users/jensmalmquist/Downloads/BlueJ 3.0.8/BlueJ.app/Contents/Resources/Java/bluejcore.jar:/Users/jensmalmquist/Downloads/BlueJ 3.0.8/BlueJ.app/Contents/Resources/Java/junit-4.8.2.jar:/Users/jensmalmquist/MarchMadness
+-d
+/Users/jensmalmquist/MarchMadness/doc
+-encoding
+MacRoman
+-charset
+MacRoman
+-docletpath
+/Users/jensmalmquist/Downloads/BlueJ 3.0.8/BlueJ.app/Contents/Resources/Java/bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+/Users/jensmalmquist/MarchMadness/JMArrayList.java
+<---- end of javadoc command ---->
+Loading source file /Users/jensmalmquist/MarchMadness/JMArrayList.java...
+Constructing Javadoc information...
+Standard Doclet version 1.6.0_41
+Building tree for all the packages and classes...
+Generating /Users/jensmalmquist/MarchMadness/doc/JMArrayList.html...
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:170: warning - @return tag has no arguments.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:31: warning - Tag @return cannot be used in constructor documentation.  It can only be used in the following types of documentation: method.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:23: warning - Tag @return cannot be used in constructor documentation.  It can only be used in the following types of documentation: method.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:23: warning - @param argument "initialCapacity:" is not a parameter name.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:69: warning - @param argument "index:" is not a parameter name.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:69: warning - @param argument "item:" is not a parameter name.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:44: warning - @param argument "item:" is not a parameter name.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:122: warning - @param argument "item:" is not a parameter name.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:153: warning - @param argument "minCapacity:" is not a parameter name.
+/Users/jensmalmquist/MarchMadness/JMArrayList.java:170: warning - @param argument "index:" is not a parameter name.
+Generating /Users/jensmalmquist/MarchMadness/doc/package-frame.html...
+Generating /Users/jensmalmquist/MarchMadness/doc/package-summary.html...
+Generating /Users/jensmalmquist/MarchMadness/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /Users/jensmalmquist/MarchMadness/doc/allclasses-frame.html...
+Generating /Users/jensmalmquist/MarchMadness/doc/allclasses-noframe.html...
+Generating /Users/jensmalmquist/MarchMadness/doc/index.html...
+Generating /Users/jensmalmquist/MarchMadness/doc/stylesheet.css...
+10 warnings

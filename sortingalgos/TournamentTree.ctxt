@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=teams\ points
+comment0.target=TournamentTree(java.lang.String[],\ int[])
+comment1.params=length
+comment1.target=int[]\ fairSequence(int)
+comment2.params=playoffs\ teams
+comment2.target=TournamentNode\ buildTree(int[],\ java.lang.String[])
+comment3.params=tied\ n
+comment3.target=int[]\ extract(java.util.ArrayList,\ int)
+comment4.params=node
+comment4.target=boolean\ playHelper(TournamentNode)
+comment5.params=
+comment5.target=void\ play()
+numComments=6

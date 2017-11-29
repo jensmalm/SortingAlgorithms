@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=n
+comment0.target=void\ main(int)
+comment1.params=st
+comment1.target=java.lang.String\ translateByTwo(java.lang.String)
+numComments=2

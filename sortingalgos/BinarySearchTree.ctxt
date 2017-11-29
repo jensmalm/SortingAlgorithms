@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BinarySearchTree()
+comment1.params=node\ level
+comment1.target=void\ printLevelHelper(TreeNode,\ int)
+comment1.text=\n\ \ \ \ //RECURSIVE\ IMPLEMENTATIONS\:\n\ \ \ \ \n\ \ \ \ private\ TreeNode<Integer>\ addHelper(int\ item,\ TreeNode<Integer>\ node)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ if\ (node\=\=null)\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ return\ new\ TreeNode<Integer>(item,\ null,\ null);\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ else\ if\ (item<node.getValue())\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ node.setLeft(addHelper(item,\ node.getLeft()));\n\ \ \ \ \ \ \ \ \ \ \ \ return\ node;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ else\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ node.setRight(addHelper(item,\ node.getRight()));\n\ \ \ \ \ \ \ \ \ \ \ \ return\ node;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ }\n\ \ \ \ private\ int\ removeHelper(TreeNode<Integer>\ node)\ //node.getleft\ is\ not\ null\n\ \ \ \ {\n\ \ \ \ \ \ \ \ if\ (node.getLeft().getLeft()\=\=null)\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ int\ returnme\=node.getLeft().getValue();\n\ \ \ \ \ \ \ \ \ \ \ \ node.setLeft(node.getLeft().getRight());\n\ \ \ \ \ \ \ \ \ \ \ \ return\ returnme;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ return\ removeHelper(node.getLeft());\n\ \ \ \ }\n\ \ \ \ public\ int\ remove()\n\ \ \ \ {\n\ \ \ \ \ \ \ \ if\ (root\=\=null)\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ return\ 0;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ if\ (root.getLeft()\=\=null)\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ int\ returnme\=root.getValue();\n\ \ \ \ \ \ \ \ \ \ \ \ root\=root.getRight();\n\ \ \ \ \ \ \ \ \ \ \ \ return\ returnme;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ return\ removeHelper(root);\n\ \ \ \ }\n\ \ \ \ public\ boolean\ add(int\ item)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ root\=addHelper(item,\ root);\n\ \ \ \ \ \ \ \ return\ true;\n\ \ \ \ }\n
+comment2.params=item
+comment2.target=boolean\ add(int)
+comment3.params=
+comment3.target=int\ remove()
+comment4.params=
+comment4.target=java.util.Iterator\ iterator()
+numComments=5
